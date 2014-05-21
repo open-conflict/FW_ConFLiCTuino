@@ -349,7 +349,7 @@ void serialport_printf(const char* __fmt, ...)
 	char aString[64];
 	va_list argumentlist;
 	va_start(argumentlist, __fmt);
-	sprintf(aString,__fmt, argumentlist);
+	vsprintf(aString,__fmt, argumentlist);
 	va_end(argumentlist);	
 	while(strlen(aString)>serialport_checkSpace());
 	serialport_write((uint8_t *)aString, strlen(aString));	
